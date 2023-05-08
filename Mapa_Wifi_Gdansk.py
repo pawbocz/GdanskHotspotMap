@@ -17,9 +17,9 @@ def wczytaj_dane(scieszka):
 
 dane = wczytaj_dane(scieszka)
 
-st.header('Mapa Publicznych Hot Spotów Gdańsk')
+st.title('Mapa Publicznych Hot Spotów Gdańsk')
 
-st.header("Który hotspot jest najczęściej używany?")
+st.header("Który hotspot jest najczęściej używany? (Styczeń 2020)")
 liczba_uzytkownikow = st.slider("Liczba użytkowników hotspotu w danym miesiącu",3,1229)
 dane_suwak= dane.query("Users >=@liczba_uzytkownikow")[["lat","lon","Nazwa lokalizacji","Users"]]
 st.map(dane_suwak,)
